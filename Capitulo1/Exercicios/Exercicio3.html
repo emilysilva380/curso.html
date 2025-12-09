@@ -8,13 +8,13 @@
 </head>
 <body>
     <div class="container">
-        <h1>Sistema de Pedidos</h1>
+        <h1>📋 Sistema de Pedidos</h1>
         
         <form id="formularioPedidos" method="POST" action="#" novalidate>
             
             <!-- SEÇÃO 1: INFORMAÇÕES DO CLIENTE -->
             <fieldset>
-                <legend>Informações do Cliente</legend>
+                <legend>👤 Informações do Cliente</legend>
 
                 <!-- Nome Completo -->
                 <div class="form-group">
@@ -69,7 +69,7 @@
                         name="senha" 
                         required 
                         minlength="8"
-                        pattern="^(?=.[A-Z])(?=.[a-z])(?=.*\d).{8,}$"
+                        pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$"
                         placeholder="Crie uma senha forte"
                         title="A senha deve ter 8+ caracteres, com pelo menos uma letra maiúscula, uma minúscula e um dígito."
                     >
@@ -90,9 +90,10 @@
                 </div>
 
             </fieldset>
+
             <!-- SEÇÃO 2: DETALHES DO PEDIDO -->
             <fieldset>
-                <legend>Detalhes do Pedido</legend>
+                <legend>📦 Detalhes do Pedido</legend>
 
                 <!-- Cor Preferencial -->
                 <div class="form-group">
@@ -182,7 +183,7 @@
 
             <!-- SEÇÃO 3: OPÇÕES DE ENVIO -->
             <fieldset>
-                <legend>Opções de Envio</legend>
+                <legend>🚚 Opções de Envio</legend>
 
                 <!-- Tipo de Envio -->
                 <div class="form-group">
@@ -229,9 +230,10 @@
                 </div>
 
             </fieldset>
+
             <!-- SEÇÃO 4: FINALIZAÇÃO E VALIDAÇÃO -->
             <fieldset>
-                <legend>Finalização</legend>
+                <legend>✅ Finalização</legend>
 
                 <!-- Termos de Serviço -->
                 <div class="form-group">
@@ -253,8 +255,8 @@
 
             <!-- Botões de Ação -->
             <div class="buttons">
-                <button type="reset">Limpar Formulário</button>
-                <button type="submit">Finalizar Pedido</button>
+                <button type="reset">🔄 Limpar Formulário</button>
+                <button type="submit">🎉 Finalizar Pedido</button>
             </div>
 
         </form>
@@ -286,7 +288,7 @@
         // Evento para contar caracteres
         comentariosInput.addEventListener('input', function() {
             const comprimento = this.value.length;
-            charCounter.textContent = ${comprimento}/300 caracteres;
+            charCounter.textContent = `${comprimento}/300 caracteres`;
             
             // Mudar cor baseado no comprimento
             if (comprimento < 10) {
@@ -305,7 +307,7 @@
             comprovanteInput.addEventListener('change', function() {
                 const file = this.files && this.files[0];
                 if (file) {
-                    comprovanteNome.textContent = Arquivo selecionado: ${file.name};
+                    comprovanteNome.textContent = `Arquivo selecionado: ${file.name}`;
                 } else {
                     comprovanteNome.textContent = '';
                 }
@@ -320,7 +322,7 @@
             if (formulario.checkValidity() === false) {
                 e.stopPropagation();
             } else {
-                alert('Pedido enviado com sucesso!\n\nDados do formulário validados e prontos para processamento.');
+                alert('✅ Pedido enviado com sucesso!\n\nDados do formulário validados e prontos para processamento.');
                 // Aqui você pode enviar os dados para um servidor
             }
             
